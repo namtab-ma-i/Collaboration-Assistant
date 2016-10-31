@@ -8,7 +8,7 @@
 			<br> <input type="text" class="form-control" name="username"
 				placeholder="username" /> <input type="password"
 				class="form-control" name="password" placeholder="password" />
-			<button class="btn btn-large btn-success btn-block" name="Submit"
+			<button class="btn btn-large btn-primary btn-block" name="Submit"
 				value="Login" type="Submit">Login</button>
 		</form>
 	</div>
