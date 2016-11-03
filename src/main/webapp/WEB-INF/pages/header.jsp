@@ -12,6 +12,7 @@
 <link	rel="stylesheet/less"	type="text/css"	href="resources/style/footer.less"/>
 <link	rel="stylesheet/less"	type="text/css"	href="resources/style/main.less"/>
 <link	rel="stylesheet/less"	type="text/css"	href="resources/style/login.less"/>
+<link	rel="stylesheet/less"	type="text/css"	href="resources/style/help.less"/>
 <link rel="stylesheet" href="resources/style/bootstrap.min.css">
 <link rel="stylesheet" href="resources/style/bootstrap-theme.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -65,7 +66,7 @@
                         <security:authorize access="isAuthenticated()">
                         	<a href="#">Settings</a>
                         </security:authorize>
-                        <a href="#">Help</a>
+                        <a href="<c:url value="/help"/>">Help</a>
                         <a href="#">Report bug</a>
                     </div>
                 </li>
