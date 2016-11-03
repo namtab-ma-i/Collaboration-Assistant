@@ -6,12 +6,12 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
-<link rel="shortcut icon"
-	href="http://faviconka.ru/ico/faviconka_ru_12.ico" type="image/x-icon">
+<link rel="shortcut icon" href="resources/img/icon.ico" type="image/x-icon">
 <link rel="stylesheet" href="resources/style/style.css">
 <link	rel="stylesheet/less"	type="text/css"	href="resources/style/nav.less"/>
 <link	rel="stylesheet/less"	type="text/css"	href="resources/style/footer.less"/>
 <link	rel="stylesheet/less"	type="text/css"	href="resources/style/main.less"/>
+<link	rel="stylesheet/less"	type="text/css"	href="resources/style/login.less"/>
 <link rel="stylesheet" href="resources/style/bootstrap.min.css">
 <link rel="stylesheet" href="resources/style/bootstrap-theme.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -49,22 +49,19 @@
 			<div class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav ">
 					<li class="menu-button"><a href="<c:url value="/main"/>" id="button16">Home</a></li>
-					
+					<security:authorize access="isAuthenticated()">
+                        	<li class="menu-button"><a href="<c:url value="/logout"/>" id="button16">Log out</a></li>
+                     </security:authorize>
+					<security:authorize access="isAnonymous()">
+							<li class="menu-button"><a href="<c:url value="/login"/>" id="button16">Log in</a></li>
+					</security:authorize>
 				
 				</ul>
-				<form class="navbar-form navbar-left search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Search</button>
-            </form>
+
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown" style="float:right;">
                     <button class="dropbtn"><i class="fa fa-cog fa-lg icon-settings" aria-hidden="true"></i> </button>
                     <div class="dropdown-content">
-                        <security:authorize access="isAuthenticated()">
-                        	<a href="<c:url value="/logout"/>">Log out</a>
-                        </security:authorize>
                         <security:authorize access="isAuthenticated()">
                         	<a href="#">Settings</a>
                         </security:authorize>
